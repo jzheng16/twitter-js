@@ -16,6 +16,11 @@ var locals = {
 
 };
 
+
+
+const routes = require('./routes/');
+app.use('/', routes);
+
 app.all('*', function(req, res, next){
 
 	console.log(req.method, 'this is the verb');
