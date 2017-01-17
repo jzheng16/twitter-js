@@ -17,14 +17,19 @@ var locals = {
 };
 
 
+app.use(express.static('public'));
 
 const routes = require('./routes/');
 app.use('/', routes);
 
 app.all('*', function(req, res, next){
+  console.log('Header: ', req.headers)
+	console.log('Verb: ', req.method );
+	console.log('Route: ', req.originalUrl);
 
-	console.log(req.method, 'this is the verb');
-	console.log(req.originalUrl, 'this is the route originalUrl');
+  console.log('Header: ', res.headers)
+  console.log('Verb: ', res.method );
+  console.log('Route: ', res.originalUrl);
 	// console.log(req.params);
 	next();
 })
