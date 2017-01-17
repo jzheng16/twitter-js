@@ -12,8 +12,6 @@ nunjucks.configure('views', {noCache: true});    //tells our app where our templ
 var locals = {
     title: 'An Example',
     people: tweetBank.list()
-
-
 };
 
 
@@ -46,7 +44,7 @@ app.use('/joey/', function(req, res, next){
 
 app.get('/nimit', function(req, res){
   tweetBank.add('Nimit Something', 'empty tweet');
-  console.log(tweetBank.find('Nimit Something'));
+  console.log(tweetBank.find({name: 'Nimit Something'}));
 	res.render( 'index', locals );
 
 })
