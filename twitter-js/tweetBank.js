@@ -1,10 +1,6 @@
 const _ = require('lodash');
 var data = [];
 let j = 0;
-data.push({name: 'joeyZ', content:'sup my names joey'});
-data.push({name: 'joeyZ', content:'sup my names something'});
-data.push({name: 'joeyZ', content:'sup my names else'});
-data.push({name: 'joeyZ', content:'sup my names bob'});
 
 function add (name, content) {
   data.push({ name: name, content: content, id: j++ });
@@ -19,8 +15,6 @@ function find (properties) {
 }
 
 module.exports = { add: add, list: list, find: find };
-
-
 
 
 

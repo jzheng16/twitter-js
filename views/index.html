@@ -10,6 +10,17 @@
       <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
       <b>Joey Zheng</b><br>
       100 followers
+      {% if showForm %}
+  <form action="/tweets" method="POST">
+    <label for="name_field">Name:</label>
+    <input name="name" type="text" id="name_field" />
+
+    <label for="text_field">Text:</label>
+    <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+    <input type="submit" value="Submit" />
+  </form>
+{% endif %}
     </div>
     <div class="col-md-9">
 
@@ -21,12 +32,13 @@
 
       {% for tweet in tweets %}
 
-      <li>
-        <a href="/users/{{tweet.name}}">{{tweet.name}}</a> - {{tweet.content}}
-      </li>
-
-
-
+      <div class = "tweetbox">
+        <img>
+        <div class = "content">
+          <p class = "by"><a href = "/users/{{tweet.name}}"> {{tweet.name}}</a> </p>
+          <p><a href = "tweets/{{tweet.id}}">{{tweet.content}}</a></p>
+        </div>
+      </div>
 
 
       {% endfor %}
@@ -35,3 +47,12 @@
   </div>
 
 {% endblock %}
+
+ <!-- <div class = "tweetbox">
+        <li class = 'content by'><a href="/users/{{tweet.name}}">{{tweet.name}}</a> - {{tweet.content}}
+        </li>
+        </div> -->
+
+
+
+<!-- href="/users/{{tweet.name}} -->

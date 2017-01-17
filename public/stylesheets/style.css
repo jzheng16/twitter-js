@@ -55,5 +55,6 @@ code {
   margin-left: 60px;
 }
 .content .by {
+  list-style: none;
   font-weight: bold;
 }
