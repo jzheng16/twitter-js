@@ -2,14 +2,17 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-
-
-
 //Nunjuck render code
 const nunjucks = require('nunjucks');
-app.set('view engine', 'html');        //Sets view engine to html default
-app.engine('html', nunjucks.render);		//Tells our app that we are using nunjuck to render html
-nunjucks.configure('views', {noCache: true});    //tells our app where our templates are
+
+//Sets view engine to html default
+app.set('view engine', 'html');
+
+//Tells our app that we are using nunjuck to render html
+app.engine('html', nunjucks.render);
+//tells our app where our templates are
+
+nunjucks.configure('views', {noCache: true});
 
 //Body-parser parses the request body which is very messy
 const bodyParser = require('body-parser');
